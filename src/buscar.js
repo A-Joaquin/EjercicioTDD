@@ -22,6 +22,10 @@ function buscarProyecto(nombre, proyectos) {
             varRetono=coincidencias;
         }
     }
+    if(coincidencias.length===0)
+        {
+            varRetono="";
+        }
     return varRetono;
   }
   export default buscarProyecto;
