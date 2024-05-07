@@ -1,31 +1,19 @@
 function buscarProyecto(nombre, proyectos) {
-    let varRetono;
-    let coincidencias=[];
+    if (proyectos.length === 0) return "";
 
-    if(proyectos.length===0)
-    {
-        varRetono="";
+    let coincidencias = [];
+
+    for (let proyecto of proyectos) {
+        let countCoincidencias = 0;
+
+        for (let i = 0; i < nombre.length; i++) {
+            if (nombre[i] === proyecto[i]) countCoincidencias++;
+        }
+
+        if (countCoincidencias > 0) coincidencias.push(proyecto);
     }
-    for (var proyecto of proyectos) {
-        let countCoincidencias=0;
-        let posLetraNombre=0;
-        for (var letra of nombre) {
-            if(letra==proyecto[posLetraNombre])
-            {
-                countCoincidencias++;
-            }
-            posLetraNombre++;
-        }
-        if(countCoincidencias>0)
-        {
-            coincidencias.push(proyecto);
-            varRetono=coincidencias;
-        }
-    }
-    if(coincidencias.length===0)
-        {
-            varRetono="";
-        }
-    return varRetono;
-  }
-  export default buscarProyecto;
+
+    return coincidencias.length > 0 ? coincidencias : "";
+}
+
+export default buscarProyecto;
