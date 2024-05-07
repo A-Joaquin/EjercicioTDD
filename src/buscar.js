@@ -1,18 +1,27 @@
 function buscarProyecto(nombre, proyectos) {
     let varRetono;
     let coincidencias=[];
+
     if(proyectos.length===0)
     {
         varRetono="";
     }
     for (var proyecto of proyectos) {
-        if(proyecto===nombre)
+        let countCoincidencias=0;
+        let posLetraNombre=0;
+        for (var letra of nombre) {
+            if(letra==proyecto[posLetraNombre])
+            {
+                countCoincidencias++;
+            }
+            posLetraNombre++;
+        }
+        if(countCoincidencias>0)
         {
             coincidencias.push(proyecto);
+            varRetono=coincidencias;
         }
-        varRetono=coincidencias;
     }
     return varRetono;
   }
-  
   export default buscarProyecto;
