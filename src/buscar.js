@@ -3,7 +3,10 @@ function buscarProyecto(nombre, proyectos) {
         {
             return "";
         }
+    if(proyectos[0]===nombre)
+        {
+            return proyectos[0];
+        }
   }
-
+  
   export default buscarProyecto;
-
