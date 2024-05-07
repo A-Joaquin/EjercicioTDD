@@ -1,5 +1,6 @@
 function buscarProyecto(nombre, proyectos) {
     let varRetono;
+    let coincidencias=[];
     if(proyectos.length===0)
     {
         varRetono="";
@@ -7,8 +8,9 @@ function buscarProyecto(nombre, proyectos) {
     for (var proyecto of proyectos) {
         if(proyecto===nombre)
         {
-            varRetono=proyecto;
+            coincidencias.push(proyecto);
         }
+        varRetono=coincidencias;
     }
     return varRetono;
   }
