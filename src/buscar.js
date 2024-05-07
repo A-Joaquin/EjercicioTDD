@@ -1,13 +1,16 @@
 function buscarProyecto(nombre, proyectos) {
-    if (proyectos.length === 0) {
-        return "";
+    let varRetono;
+    if(proyectos.length===0)
+    {
+        varRetono="";
     }
-
-    for (let proyecto of proyectos) {
-        if (nombre === proyecto) {
-            return proyecto;
+    for (var proyecto of proyectos) {
+        if(proyecto===nombre)
+        {
+            varRetono=proyecto;
         }
     }
-}
-
-export default buscarProyecto;
+    return varRetono;
+  }
+  
+  export default buscarProyecto;

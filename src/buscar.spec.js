@@ -17,4 +17,11 @@ describe("Buscar Proyecto de una lista de proyectos", () => {
     proyectos.push("proyecto3")
     expect(buscarProyecto("proyecto1",proyectos)).toEqual("proyecto1");
   });
+  it("Encuentra un proyecto si esque existe en la lista de varios proyectos", () => {
+    let proyectos=[];
+    proyectos.push("proyecto1")
+    proyectos.push("proyecto2")
+    proyectos.push("proyecto3")
+    expect(buscarProyecto("proyecto1",proyectos)).toEqual("proyecto1");
+  });
 });
